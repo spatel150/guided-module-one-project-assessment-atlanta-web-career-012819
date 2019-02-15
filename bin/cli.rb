@@ -8,7 +8,6 @@ class CLI
     @driver = nil
   end
 
-
   def show_menu
     puts "Please enter a number for each menu item A-F. (Example- A: 1 or B: 2) "
     puts "A. Passenger Login: "
