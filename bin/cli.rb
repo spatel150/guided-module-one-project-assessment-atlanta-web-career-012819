@@ -9,7 +9,7 @@ class CLI
   end
 
   def show_menu
-    puts "Please enter a number for each menu item A-F. (Example- A: 1 or B: 2) "
+    puts "Please enter a number for each menu item A-F. "
     puts "A. Passenger Login: "
     puts "B. Search for a driver: "
     puts "C. Add a new review: "
