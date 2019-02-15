@@ -17,7 +17,7 @@ class CLI
     puts "E. List the reviews for a driver: "
     puts "F. Update a review: "
     puts "G. Delete a review: "
-    puts "H. Type done to exit: "
+    puts "H. Exit the application: "
     user_input = gets.chomp
       if user_input == "a"
         login
@@ -87,13 +87,16 @@ class CLI
 
   def update_review
     puts "To update your review: "
-    puts "Enter driver id"
-    driver_id = gets.chomp
-    puts "Enter passenger id"
-    passenger_id = gets.chomp
+    puts "Enter driver name"
+    driver_name = gets.chomp
+    puts "Enter passenger name"
+    passenger_name = gets.chomp
     puts "and enter new review: "
     review = gets.chomp
-    myReview = Review.find_by(driver_id: driver_id, passenger_id: passenger_id)
+    driver_1 = Driver.all.find_by(name: driver_name)
+    passenger_1 = Passenger.all.find_by(name: passenger_name)
+
+    myReview = Review.find_by(driver_id: driver_1.name, passenger_id: passenger_1.name)
     myReview.update(reviews: review)
     show_menu
   end
@@ -110,7 +113,7 @@ class CLI
   end
 
   def done
-    puts "Please type done, to exit the application: "
+    puts "Please exit the application: "
   end
 
 end
