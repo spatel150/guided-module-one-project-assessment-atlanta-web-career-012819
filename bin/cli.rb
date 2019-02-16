@@ -87,7 +87,7 @@ class CLI
 
   def update_review
     puts "To update your review: "
-    puts "Enter driver name"
+    puts "Enter driver name: "
     driver_name = gets.chomp
     puts "Enter passenger name"
     passenger_name = gets.chomp
@@ -95,7 +95,6 @@ class CLI
     review = gets.chomp
     driver_1 = Driver.all.find_by(name: driver_name)
     passenger_1 = Passenger.all.find_by(name: passenger_name)
-
     myReview = Review.find_by(driver_id: driver_1.name, passenger_id: passenger_1.name)
     myReview.update(reviews: review)
     show_menu
@@ -103,11 +102,13 @@ class CLI
 
   def delete_review
     puts "Enter these fields to delete a review: "
-    puts "Enter driver id"
-    driver_id = gets.chomp
-    puts "Enter passenger id"
-    passenger_id = gets.chomp
-    review = Review.find_by(driver_id: driver_id, passenger_id: passenger_id)
+    puts "Enter driver name: "
+    name_driver = gets.chomp
+    puts "Enter passenger name: "
+    name_passenger = gets.chomp
+    driver_2 = Driver.all.find_by(name: name_driver)
+    passenger_2 = Passenger.all.find_by(name: name_passenger)
+    review = Review.find_by(driver_id: driver_2.name, passenger_id: passenger_2.name)
     review.destroy
     show_menu
   end
