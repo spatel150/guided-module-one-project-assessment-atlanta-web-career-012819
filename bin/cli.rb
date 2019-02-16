@@ -89,7 +89,7 @@ class CLI
     puts "To update your review: "
     puts "Enter driver name: "
     driver_name = gets.chomp
-    puts "Enter passenger name"
+    puts "Enter passenger name: "
     passenger_name = gets.chomp
     puts "and enter new review: "
     review = gets.chomp
